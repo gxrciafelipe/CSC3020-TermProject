@@ -10,4 +10,4 @@ This will be a calendar app, where the user can see a calendar and set tasks, ev
 Setup Instructions
 
 
-Confluence: https://felipegarcia.atlassian.net/wiki/pages/resumedraft.action?draftId=2490370&draftShareId=ed24e1da-5c61-4c43-a16c-4e7e4a892911
+Confluence: [https://felipegarcia.atlassian.net/wiki/pages/resumedraft.action?draftId=2490370&draftShareId=ed24e1da-5c61-4c43-a16c-4e7e4a892911](https://felipegarcia.atlassian.net/wiki/x/AgAm)
