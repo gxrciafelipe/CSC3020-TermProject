@@ -7,6 +7,8 @@ Calendar App
 
 This will be a calendar app, where the user can see a calendar and set tasks, events, reminders, etc, so they can organize themselves better and have an easy access to their weekly, monthly or yearly to-dos.
 
+Milestone 2: Added Docker setup. See Confluence for details.
+
 Setup Instructions
 
 
