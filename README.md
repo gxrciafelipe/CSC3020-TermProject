@@ -9,6 +9,8 @@ This will be a calendar app, where the user can see a calendar and set tasks, ev
 
 Milestone 2: Added Docker setup. See Confluence for details.
 
+Milestone 3: Explored AI-assisted tools for project documentation and design (see Confluence for details).
+
 Setup Instructions
 
 
