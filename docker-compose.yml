@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  web:
+    container_name: calendar-app  # Matches the name you see in Docker Desktop
+    build: .                      # Builds from the current folder
+    ports:
+      - "5000:5000"               # Maps the ports
+    volumes:
+      - .:/app                    # Syncs your folder (The database persistence magic)
