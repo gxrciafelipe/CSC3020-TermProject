@@ -15,5 +15,5 @@ Milestone 4: Finishing and deploying the project.
 Setup Instructions
 
 Final Prototype & Documentation
-Working Project: https://csc3020-termproject.onrender.com/
+Working Project: https://csc3020-termproject.onrender.com/<br> 
 Confluence: https://felipegarcia.atlassian.net/wiki/pages/resumedraft.action?draftId=2490370&draftShareId=ed24e1da-5c61-4c43-a16c-4e7e4a892911
