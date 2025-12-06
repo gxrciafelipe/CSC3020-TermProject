@@ -48,22 +48,14 @@ body {
     outline-offset: 2px;
 }
 
-@media (max-width: 768px) {
-    .fc-toolbar-title { font-size: 1.2rem !important; }
-    .btn { padding: 0.375rem 0.5rem; }
-    #calendar-container { padding: 10px !important; }
-    .fab { width: 50px; height: 50px; font-size: 28px; bottom: 20px; right: 20px; }
-    .fab span { margin-top: -3px; }
-}
-
 /* =========================================
-   3. CALENDAR TEXT & LINKS (Underline Fix)
+   3. CALENDAR TEXT & LINKS
    ========================================= */
-/* Remove underlines from Weekday Names (Mon, Tue...) and Date Numbers (1, 2...) */
+/* Remove underlines from Weekday Names and Date Numbers */
 a.fc-col-header-cell-cushion,
 a.fc-daygrid-day-number {
     text-decoration: none !important;
-    color: inherit; /* Inherit color from theme (black/white) */
+    color: inherit;
 }
 
 /* Today Button */
@@ -136,7 +128,7 @@ a.fc-daygrid-day-number {
     opacity: 0.95;
     border: none !important;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    font-weight: 600; /* Bold is okay here on the red chip, or remove if you want */
+    font-weight: 600; 
 }
 
 /* B. Month View Only (Reset) */
@@ -235,4 +227,93 @@ a.fc-daygrid-day-number {
 }
 [data-bs-theme="dark"] .fc-list-empty {
     background-color: #212529 !important;
+}
+
+/* =========================================
+   9. MOBILE OPTIMIZATIONS 
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* A. Enable Scroll Container */
+    #calendar-container { 
+        padding: 5px !important; 
+        overflow-x: auto;       /* Scroll triggers ONLY if content is too wide */
+        -webkit-overflow-scrolling: touch; 
+    }
+    
+    /* B. Force Width ONLY for Grid Views (Month/Week) */
+    /* This ensures Month/Week views are wide enough to not squash events */
+    .fc-daygrid, .fc-timegrid {
+        min-width: 700px; 
+    }
+
+    /* C. Reset Width for List View */
+    /* This ensures List View stays 100% width and fits the screen perfectly */
+    .fc-list {
+        min-width: 0 !important;
+        width: 100% !important;
+    }
+
+    /* D. Fix Clustered Text in Grids */
+    .fc-event-title, .fc-event-main {
+        font-size: 0.75rem !important; 
+        white-space: nowrap !important; 
+        overflow: hidden !important;    
+        text-overflow: ellipsis !important; 
+    }
+
+    /* E. Adjust Toolbar & Buttons */
+    .fc-toolbar-title { font-size: 1.2rem !important; }
+    .btn { padding: 0.375rem 0.5rem; }
+    
+    /* F. Adjust FAB position */
+    .fab { width: 50px; height: 50px; font-size: 28px; bottom: 20px; right: 20px; }
+    .fab span { margin-top: -3px; }
+}
+
+/* =========================================
+   10. TOOLBAR & HEADER FIXES
+   ========================================= */
+
+/* 1. Add gap between Arrows (< >) and Today button */
+/* Target the button group inside the first section of the toolbar */
+.fc-header-toolbar .fc-toolbar-chunk:first-child .fc-button-group {
+    margin-right: 12px !important; /* Adds spacing */
+}
+
+/* 2. Center the Title & Improve Layout */
+.fc-toolbar-title {
+    text-align: center;
+    font-weight: 700 !important;
+    padding: 0 10px; /* Safety padding */
+}
+
+/* =========================================
+   MOBILE TOOLBAR LAYOUT (Crucial Fix)
+   ========================================= */
+@media (max-width: 768px) {
+    
+    /* Switch to a stacked layout so the title has room */
+    .fc-header-toolbar {
+        flex-direction: column !important; /* Stack items vertically */
+        gap: 12px !important; /* Space between rows */
+        padding-top: 10px;
+    }
+
+    /* Center all the chunks */
+    .fc-toolbar-chunk {
+        display: flex;
+        justify-content: center;
+        width: 100%; 
+    }
+
+    /* Make the title slightly smaller to look elegant */
+    .fc-toolbar-title {
+        font-size: 1.25rem !important;
+        line-height: 1.2;
+    }
+    
+    .fc-header-toolbar { flex-direction: column-reverse !important; }
+    .fc-toolbar-chunk:nth-child(2) { margin-bottom: 5px; } 
+    
 }
